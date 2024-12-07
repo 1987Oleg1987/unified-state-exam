@@ -8,7 +8,7 @@ counter = 0
 
 for x in product("АБВГДЕ", repeat=6):
     s = "".join(x)
-    if (s[0] not in "АЕ") and \
+    if (s[0] in "БВГД") and \
             (s[0] != s[1]) and (s[1] != s[2]) and (s[2] != s[3]) and \
             (s[3] != s[4]) and (s[4] != s[5]):
         counter += 1
