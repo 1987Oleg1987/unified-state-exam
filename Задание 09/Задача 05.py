@@ -13,3 +13,5 @@ for s in f:
         k += 1
 
 f.close()
+
+print(k)
