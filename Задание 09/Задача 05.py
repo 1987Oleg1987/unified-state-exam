@@ -7,7 +7,7 @@ f = open("05.csv", "r")
 k = 0
 
 for s in f:
-    A = list(map(float, s.rstrip("\n").split(";")))
+    A = list(map(float, s.split(";")))
     # A = [float(t) for t in s.rstrip("\n").split(";")]
     if sum(A) / len(A) <= 20:  # лучше так: if round(sum(A) / len(A), 1) <= 20.0:
         k += 1
