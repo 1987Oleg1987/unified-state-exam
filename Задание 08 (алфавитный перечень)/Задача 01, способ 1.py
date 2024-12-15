@@ -16,5 +16,4 @@ i = 0
 for x in product("АБВГ", repeat=5):
     s = "".join(x)
     i += 1
-    if i == 187:
-        print(i, s)
+    print(i, s)
