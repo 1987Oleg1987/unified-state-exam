@@ -24,19 +24,37 @@ max13 = 0
 
 for i in range(n):
     if A[i] % 100 == 13:
-        if A[i] > max13: max13 = A[i]
+        if A[i] > max13:
+            max13 = A[i]
+
+# Или так:
+# for i in range(n):
+#     if A[i] % 100 == 13 and A[i] > max13:
+#         max13 = A[i]
+
+# Или так:
+# for i in range(n):
+#     if A[i] % 100 == 13:
+#         max13 = max(max13, A[i])
+
 
 count = 0
-maxsum = 0
+maxsumm = 0
 
 for i in range(n - 2):
     k = 0
-    if 100 <= A[i] <= 999: k += 1
-    if 100 <= A[i + 1] <= 999: k += 1
-    if 100 <= A[i + 2] <= 999: k += 1
+    if 100 <= A[i] <= 999:
+        k += 1
+    if 100 <= A[i + 1] <= 999:
+        k += 1
+    if 100 <= A[i + 2] <= 999:
+        k += 1
     summ = A[i] + A[i + 1] + A[i + 2]
     if k == 2 and summ <= max13:
         count += 1
-        if summ > maxsum: maxsum = summ
+        if summ > maxsumm:
+            maxsumm = summ
+        # Или так:
+        # maxsumm = max(maxsumm, summ)
 
-print(count, maxsum)
+print(count, maxsumm)

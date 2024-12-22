@@ -23,18 +23,34 @@ maxd = 0
 
 for i in range(n):
     if 10 <= A[i] <= 99:
-        if A[i] > maxd: maxd = A[i]
+        if A[i] > maxd:
+            maxd = A[i]
+
+# Или так:
+# for i in range(n):
+#     if 10 <= A[i] <= 99 and A[i] > maxd:
+#         maxd = A[i]
+
+# Или так:
+# for i in range(n):
+#     if 10 <= A[i] <= 99:
+#         maxd = max(maxd, A[i])
 
 count = 0
-maxsum = 0
+maxsumm = 0
 
 for i in range(n - 1):
     k = 0
-    if 10 <= A[i] <= 99: k += 1
-    if 10 <= A[i + 1] <= 99: k += 1
+    if 10 <= A[i] <= 99:
+        k += 1
+    if 10 <= A[i + 1] <= 99:
+        k += 1
     summ = A[i] + A[i + 1]
     if k == 1 and summ % maxd == 0:
         count += 1
-        if summ > maxsum: maxsum = summ
+        if summ > maxsumm:
+            maxsumm = summ
+        # Или так:
+        # maxsumm = max(maxsumm, summ)
 
-print(count, maxsum)
+print(count, maxsumm)

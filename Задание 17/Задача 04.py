@@ -23,18 +23,34 @@ max3 = -1_000_000
 
 for i in range(n):
     if abs(A[i]) % 10 == 3:
-        if A[i] > max3: max3 = A[i]
+        if A[i] > max3:
+            max3 = A[i]
+
+# Или так:
+# for i in range(n):
+#     if abs(A[i]) % 10 == 3 and A[i] > max3:
+#         max3 = A[i]
+
+# Или так:
+# for i in range(n):
+#     if abs(A[i]) % 10 == 3:
+#         max3 = max(max3, A[i])
 
 count = 0
-maxsum = 0
+maxsumm = 0
 
 for i in range(n - 1):
     k = 0
-    if abs(A[i]) % 10 == 3: k += 1
-    if abs(A[i + 1]) % 10 == 3: k += 1
+    if abs(A[i]) % 10 == 3:
+        k += 1
+    if abs(A[i + 1]) % 10 == 3:
+        k += 1
     summ = A[i] ** 2 + A[i + 1] ** 2
     if k == 1 and summ >= max3 ** 2:
         count += 1
-        if summ > maxsum: maxsum = summ
+        if summ > maxsumm:
+            maxsumm = summ
+        # Или так:
+        # maxsumm = max(maxsumm, summ)
 
-print(count, maxsum)
+print(count, maxsumm)

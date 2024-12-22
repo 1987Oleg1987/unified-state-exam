@@ -22,15 +22,22 @@ n = len(A)
 minimum = 1_000_000
 
 for i in range(n):
-    if A[i] < minimum: minimum = A[i]
+    if A[i] < minimum:
+        minimum = A[i]
+
+# Или так:
+# minimum = min(A)
 
 count = 0
-maxsum = 0
+maxsumm = 0
 
 for i in range(n - 1):
     if A[i] % 117 == minimum or A[i + 1] % 117 == minimum:
         count += 1
         summ = A[i] + A[i + 1]
-        if summ > maxsum: maxsum = summ
+        if summ > maxsumm:
+            maxsumm = summ
+        # Или так:
+        # maxsumm = max(maxsumm, A[i] + A[i + 1])
 
-print(count, maxsum)
+print(count, maxsumm)

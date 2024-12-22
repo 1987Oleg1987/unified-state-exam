@@ -23,15 +23,29 @@ min21 = 1_000_000
 
 for i in range(n):
     if A[i] % 21 == 0:
-        if A[i] < min21: min21 = A[i]
+        if A[i] < min21:
+            min21 = A[i]
+
+# Или так:
+# for i in range(n):
+#     if A[i] % 21 == 0 and A[i] < min21:
+#         min21 = A[i]
+
+# Или так:
+# for i in range(n):
+#     if A[i] % 21 == 0:
+#         min21 = min(min21, A[i])
 
 count = 0
-maxsum = 0
+maxsumm = 0
 
 for i in range(n - 1):
     if A[i] % min21 == 0 or A[i + 1] % min21 == 0:
         count += 1
         summ = A[i] + A[i + 1]
-        if summ > maxsum: maxsum = summ
+        if summ > maxsumm:
+            maxsumm = summ
+        # Или так:
+        # maxsumm = max(maxsumm, A[i] + A[i + 1])
 
-print(count, maxsum)
+print(count, maxsumm)
